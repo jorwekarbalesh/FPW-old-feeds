@@ -1,0 +1,34 @@
+set safe off
+set talk off
+set date british
+x=0
+dt=date()
+clear
+a=0
+@5,5 to 20,40  doub
+@7,7 say "enter code"
+@7,25 get a
+read
+sele a
+use (database)
+index on code to index
+sele b
+use (database 1)
+index on code to (database 1)
+sele a
+seek a
+
+if found()
+@9,7 say "item name:-"
+@9,25 say name 
+else 
+endif
+sele b
+append blank
+@11,7 say "quantity:-"
+@11,25 get x
+read
+@13,7 say "date:-" get dt
+replace issue with x
+replace date with dt 
+replace code with a
